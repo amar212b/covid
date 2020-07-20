@@ -1,0 +1,15 @@
+name: corona #Environment name
+dependencies:
+  - python=3.6
+  - pip:
+    - dash
+    - dash-renderer
+    - dash-core-components
+    - dash-html-components
+    - plotly
+    - gunicorn # for app deployment
+    - json
+    - requests
+    - datetime
+    - scipy.interpolate
+    - geopandas
