@@ -11,8 +11,6 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import plotly
 import dash_table
-from plotly.tools import mpl_to_plotly
-from matplotlib import pyplot as plt
 
 import pandas as pd
 import numpy as np
@@ -30,9 +28,8 @@ import json
 from scipy.interpolate import interp1d
 
 import geopandas as gpd
-from plotly.subplots import make_subplots
 
-import mplcursors
+
 
 
 # In[28]:
