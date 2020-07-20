@@ -218,59 +218,59 @@ case_time_series_df['death_rate_india']=(case_time_series_df['Total Deceased']/c
 # In[30]:
 
 
-# reading the shape file of map of India in GeoDataFrame
-map_data = gpd.read_file(r"C:\corona\corona-app1\Igismap\Indian_States.shp")
-map_data.rename(columns = {'st_nm':'States/UT'}, inplace = True)
-map_data
-map_data['States/UT'] = map_data['States/UT'].str.replace('&','and')
-map_data['States/UT'].replace('Arunanchal Pradesh',
-                              'Arunachal Pradesh', inplace = True)
-map_data['States/UT'].replace('Telangana', 
-                              'Telengana', inplace = True)
-map_data['States/UT'].replace('NCT of Delhi', 
-                              'Delhi', inplace = True)
-map_data['States/UT'].replace('Andaman and Nicobar Island', 
-                              'Andaman and Nicobar Islands', 
-                               inplace = True)
+# # reading the shape file of map of India in GeoDataFrame
+# map_data = gpd.read_file(r"C:\corona\corona-app1\Igismap\Indian_States.shp")
+# map_data.rename(columns = {'st_nm':'States/UT'}, inplace = True)
+# map_data
+# map_data['States/UT'] = map_data['States/UT'].str.replace('&','and')
+# map_data['States/UT'].replace('Arunanchal Pradesh',
+                              # 'Arunachal Pradesh', inplace = True)
+# map_data['States/UT'].replace('Telangana', 
+                              # 'Telengana', inplace = True)
+# map_data['States/UT'].replace('NCT of Delhi', 
+                              # 'Delhi', inplace = True)
+# map_data['States/UT'].replace('Andaman and Nicobar Island', 
+                              # 'Andaman and Nicobar Islands', 
+                               # inplace = True)
 
-map_data.rename(columns={'States/UT': 'State', 'Long_': 'Long'}, inplace=True)
-
-
-# In[31]:
+# map_data.rename(columns={'States/UT': 'State', 'Long_': 'Long'}, inplace=True)
 
 
-# Generate centroids for each polygon to use as marker locations
-map_data['lon_lat'] = map_data['geometry'].apply(lambda row: row.centroid)
-map_data['LON'] = map_data['lon_lat'].apply(lambda row: row.x)
-map_data['LAT'] = map_data['lon_lat'].apply(lambda row: row.y)
-map_data = map_data.drop('lon_lat', axis=1)
-
-lon = map_data['LON'][0]
-lat = map_data['LAT'][0]
+# # In[31]:
 
 
-# In[32]:
+# # Generate centroids for each polygon to use as marker locations
+# map_data['lon_lat'] = map_data['geometry'].apply(lambda row: row.centroid)
+# map_data['LON'] = map_data['lon_lat'].apply(lambda row: row.x)
+# map_data['LAT'] = map_data['lon_lat'].apply(lambda row: row.y)
+# map_data = map_data.drop('lon_lat', axis=1)
+
+# lon = map_data['LON'][0]
+# lat = map_data['LAT'][0]
 
 
-merged_data = pd.merge(map_data, state_df, 
-                       how = 'inner', on = 'State')
+# # In[32]:
 
 
-# In[33]:
+# merged_data = pd.merge(map_data, state_df, 
+                       # how = 'inner', on = 'State')
 
 
-# India map heading
-margin = merged_data['Confirmed'].values.tolist()
-circel_range = interp1d([0, max(margin)], [0,12])
-circle_radius = circel_range(margin)
+# # In[33]:
 
-global_map_heading = html.H2(children='India map view', className='mt-5 py-4 pb-3 text-center')
 
-# ploting the map
-map_fig = px.scatter_mapbox(merged_data, lat="LAT", lon="LON", hover_name="State", hover_data=["Confirmed", "Deaths"],
-                        color_discrete_sequence=["#e60039"], zoom=3.5, height=500, size_max=70, size=circle_radius)
+# # India map heading
+# margin = merged_data['Confirmed'].values.tolist()
+# circel_range = interp1d([0, max(margin)], [0,12])
+# circle_radius = circel_range(margin)
 
-map_fig.update_layout(mapbox_style="open-street-map", margin={"r":0,"t":0,"l":0,"b":0}, height=520)
+# global_map_heading = html.H2(children='India map view', className='mt-5 py-4 pb-3 text-center')
+
+# # ploting the map
+# map_fig = px.scatter_mapbox(merged_data, lat="LAT", lon="LON", hover_name="State", hover_data=["Confirmed", "Deaths"],
+                        # color_discrete_sequence=["#e60039"], zoom=3.5, height=500, size_max=70, size=circle_radius)
+
+# map_fig.update_layout(mapbox_style="open-street-map", margin={"r":0,"t":0,"l":0,"b":0}, height=520)
 
 
 # In[35]:
