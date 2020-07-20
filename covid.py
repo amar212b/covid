@@ -1012,11 +1012,11 @@ app.layout = html.Div(style= {'backgroundColor': '#1b3942','color':'white'},#e5e
          ])        
              ,
          html.Br(),
-        html.Div(style = { 'width': '96%', 'height': '200%','backgroundColor':colors['background'],
-                                'display': 'inline-block',
-                                'marginRight': '1.8%', 'verticalAlign': 'top', 'marginTop': '0%',  'marginLeft': '1.8%','marginBottom': '1.8%'},
-         children=[dcc.Graph(figure=map_fig,id='india_map_open')
-                ]),   
+        # html.Div(style = { 'width': '96%', 'height': '200%','backgroundColor':colors['background'],
+                                # 'display': 'inline-block',
+                                # 'marginRight': '1.8%', 'verticalAlign': 'top', 'marginTop': '0%',  'marginLeft': '1.8%','marginBottom': '1.8%'},
+         # children=[dcc.Graph(figure=map_fig,id='india_map_open')
+                # ]),   
         
          html.Br(),
               
