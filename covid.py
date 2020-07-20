@@ -219,7 +219,7 @@ case_time_series_df['death_rate_india']=(case_time_series_df['Total Deceased']/c
 
 
 # reading the shape file of map of India in GeoDataFrame
-map_data = gpd.read_file(r"C:\corona\corona-app\Igismap\Indian_States.shp")
+map_data = gpd.read_file(r"C:\corona\corona-app1\Igismap\Indian_States.shp")
 map_data.rename(columns = {'st_nm':'States/UT'}, inplace = True)
 map_data
 map_data['States/UT'] = map_data['States/UT'].str.replace('&','and')
