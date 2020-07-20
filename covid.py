@@ -61,7 +61,7 @@ state_district_df_disp=state_district_df.loc[:,['State','District','Confirmed','
 # Time updates
 dt = datetime.now()
 dt1 = dt + timedelta(hours = 5, minutes = 30)
-update = dt.strftime('%B ,%d at %H:%M')
+update = dt1.strftime('%B ,%d at %H:%M')
 state_df['Last_Updated_Time'] = pd.to_datetime(state_df['Last_Updated_Time'])
 max_time=state_df['Last_Updated_Time'].max()
 min_time=state_df['Last_Updated_Time'].min()
