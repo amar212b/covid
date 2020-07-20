@@ -398,22 +398,22 @@ world_tally = dbc.Container(
         
         dbc.Row(
             [
-                dbc.Col(children = [html.H4('Confirmed',style = {'color': 'black'}), html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
+                dbc.Col(children = [html.H4('Confirmed',style = {'color': 'white'}), html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
                                                                           children=confirmed_growth_global1_num + '(' + confirmed_growth_global1 + ')' ),
                         html.Div(country_df['Confirmed'].sum(), className='text-info', style = {'font-size': '34px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light border-right p-3', style = {'border-top-left-radius': '6px', 'border-bottom-left-radius': '6px'}),
                 
-                dbc.Col(children = [html.H4('Recovered', style = {'padding-top': '0px','color': 'black'}),html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
+                dbc.Col(children = [html.H4('Recovered', style = {'padding-top': '0px','color': 'white'}),html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
                                                                           children=confirmed_recovered_global1_num + '(' + confirmed_recovered_global1 + ')' ),
                         html.Div(country_df['Recovered'].sum(), className='text-success', style = {'font-size': '34px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light border-right p-3'),
                 
-                dbc.Col(children = [html.H4('Deaths', style = {'padding-top': '0px','color': 'black'}), html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
+                dbc.Col(children = [html.H4('Deaths', style = {'padding-top': '0px','color': 'white'}), html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
                                                                           children=confirmed_death_global1_num + '(' + confirmed_death_global1 + ')' ),
                         html.Div(country_df['Deaths'].sum(), className='text-danger', style = {'font-size': '34px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light border-right p-3'),
                 
-                dbc.Col(children = [html.H4('Active',style = {'color': 'black'}),html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
+                dbc.Col(children = [html.H4('Active',style = {'color': 'white'}),html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
                                                                           children=confirmed_active_global1_num + '(' + confirmed_active_global1 + ')' ),
                         html.Div(country_df['Active'].sum(),className='text-warning', style = {'font-size': '34px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light p-3', style = {'border-top-right-radius': '6px', 'border-bottom-right-radius': '6px'}),
@@ -456,23 +456,23 @@ state_tally = dbc.Container(
         
         dbc.Row(
             [
-                dbc.Col(children = [html.H4('Confirmed',style = {'color': 'black'}), html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
+                dbc.Col(children = [html.H4('Confirmed',style = {'color': 'white'}), html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
                                                                           children=confirmed_num_increase + '(' + confirmed_growth + ')' ),
                         html.Div(state_df['Confirmed'].sum(), className='text-info', style = {'font-size': '34px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light border-right p-2', style = {'border-top-left-radius': '6px', 'border-bottom-left-radius': '6px'}),
                         
 
-                dbc.Col(children = [html.H4('Recovered',style = {'padding-top': '0px','color': 'black'}),html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
+                dbc.Col(children = [html.H4('Recovered',style = {'padding-top': '0px','color': 'white'}),html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
                                                                           children=recovered_num_increase + '(' + recovered_growth + ')'),
                         html.Div(state_df['Recovered'].sum(), className='text-success', style = {'font-size': '34px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light border-right p-2'),
                 
-                dbc.Col(children = [html.H4('Deaths',style = {'padding-top': '0px','color': 'black'}), html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
+                dbc.Col(children = [html.H4('Deaths',style = {'padding-top': '0px','color': 'white'}), html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
                                                                           children=death_num_increase + '(' + death_growth + ')'),
                         html.Div(state_df['Deaths'].sum(), className='text-danger', style = {'font-size': '34px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light border-right p-2'),
                 
-                dbc.Col(children = [html.H4('Active',style = {'color': 'black'}),html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
+                dbc.Col(children = [html.H4('Active',style = {'color': 'white'}),html.P(style={'color': 'grey',  'fontSize': 20,'height': '5px'},
                                                                           children=active_num_increase + '(' + active_growth + ')'),
                         html.Div(state_df['Active'].sum()+state_df['Migrated_Other'].sum(),className='text-warning', style = {'font-size': '34px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light p-2', style = {'border-top-right-radius': '6px', 'border-bottom-right-radius': '6px'}),
@@ -1297,19 +1297,19 @@ def total_of_state(state):
         html.H4(children='Total case in '+ state + '',style={'textAlign': 'center'}),
         dbc.Row(
             [
-                dbc.Col(children = [html.H6('Confirmed',style = {'color': 'black'}), 
+                dbc.Col(children = [html.H6('Confirmed',style = {'color': 'white'}), 
                         html.Div(my_state['Confirmed'].sum(), className='text-info', style = {'font-size': '28px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light border-right pt-2', style = {'border-top-left-radius': '6px', 'border-bottom-left-radius': '6px'}),
                 
-                dbc.Col(children = [html.H6('Recovered', style = {'padding-top': '0px','color': 'black'}),
+                dbc.Col(children = [html.H6('Recovered', style = {'padding-top': '0px','color': 'white'}),
                         html.Div(my_state['Recovered'].sum(), className='text-success', style = {'font-size': '28px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light border-right pt-2'),
                 
-                dbc.Col(children = [html.H6('Death', style = {'padding-top': '0px','color': 'black'}), 
+                dbc.Col(children = [html.H6('Death', style = {'padding-top': '0px','color': 'white'}), 
                         html.Div(my_state['Deaths'].sum(), className='text-danger', style = {'font-size': '28px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light border-right pt-2'),
                 
-                dbc.Col(children = [html.H6('Active',style = {'color': 'black'}),
+                dbc.Col(children = [html.H6('Active',style = {'color': 'white'}),
                         html.Div(my_state['Active'].sum(),className='text-warning', style = {'font-size': '28px', 'font-weight': '700'})],
                         width=3, className='text-center bg-light pt-2', style = {'border-top-right-radius': '6px', 'border-bottom-right-radius': '6px'}),
             ]
